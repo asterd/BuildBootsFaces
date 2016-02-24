@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="lib/gradle-tooling-api-2.11.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.10.jar"/>
+	<classpathentry kind="lib" path="lib/gradle-base-services-2.11.jar"/>
+	<classpathentry kind="lib" path="lib/guava-jdk5-17.0.jar"/>
+	<classpathentry kind="lib" path="lib/gradle-messaging-2.11.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-over-slf4j-1.7.10.jar"/>
+	<classpathentry kind="lib" path="lib/gradle-wrapper-2.11.jar"/>
+	<classpathentry kind="lib" path="lib/gradle-native-2.11.jar"/>
+	<classpathentry kind="lib" path="lib/gradle-base-services-groovy-2.11.jar"/>
+	<classpathentry kind="lib" path="lib/gradle-cli-2.11.jar"/>
+	<classpathentry kind="lib" path="lib/gradle-core-2.11.jar"/>
+	<classpathentry kind="lib" path="lib/gradle-resources-2.11.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
