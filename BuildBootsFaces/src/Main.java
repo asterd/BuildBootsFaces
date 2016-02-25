@@ -5,9 +5,10 @@ import org.gradle.tooling.ProjectConnection;
 import java.io.File;
 
 public class Main {
+	private static final String PROJECT_DIRECTORY_PATH = "/Users/durzod/Desktop/Development/java/bootsfaces/asterd/BootsFaces-OSP";
 	public static String[] enabledThemeList = new String[] {
-		//"default",
-		//"cerulean",
+		"default",
+		"cerulean",
 		//"cosmo",
 		//"cyborg",
 		//"darkly", 
@@ -20,10 +21,10 @@ public class Main {
 		//"simplex",
 		//"slate",
 		//"spacelab",
-		"superhero",
-		"united",
+		//"superhero",
+		//"united",
 		//"yeti",
-		//"other"
+		"other"
 	};
 	
     public static void main(String[] args) {
@@ -37,24 +38,24 @@ public class Main {
             }
         }
 
-        for(String theme : enabledThemeList) {
-	        connector.forProjectDirectory(new File("/Users/durzod/Desktop/Development/java/bootsfaces/asterd/BootsFaces-OSP"));
-	
-	        ProjectConnection connection = connector.connect();
-	        try {
-	            // Configure the build
+        // configure project
+        connector.forProjectDirectory(new File(PROJECT_DIRECTORY_PATH));
+        ProjectConnection connection = connector.connect();
+        try {
+        	for(String theme : enabledThemeList) {
+	            // Configure the build for single theme compilation
 	            BuildLauncher launcher = connection.newBuild();
 	            launcher.forTasks("gradleResources:buildResources", "jar");
-	            launcher.withArguments("-Pcustom-theme=" + theme);
+	            launcher.withArguments("-Pcustom-theme=" + theme); 
 	            launcher.setStandardOutput(System.out);
 	            launcher.setStandardError(System.err);
 	
 	            // Run the build
 	            launcher.run();
-	        } finally {
-	            // Clean up
-	            connection.close();
-	        }
-    	}
+        	}
+        } finally {
+            // Clean up
+            connection.close();
+        }
     }
 }
