@@ -45,6 +45,8 @@ public class Main {
         	for(String theme : enabledThemeList) {
 	            // Configure the build for single theme compilation
 	            BuildLauncher launcher = connection.newBuild();
+	            //if your build needs crazy amounts of memory:
+	            launcher.setJvmArguments("-Xmx1024m", "-Xms256m", "-XX:MaxPermSize=1024m");
 	            launcher.forTasks("gradleResources:buildResources", "jar");
 	            launcher.withArguments("-Pcustom-theme=" + theme); 
 	            launcher.setStandardOutput(System.out);
